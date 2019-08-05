@@ -1,1 +1,1 @@
-This is a read me for Java 401 labs
+Java 401 labs
