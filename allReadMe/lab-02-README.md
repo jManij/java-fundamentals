@@ -1,4 +1,4 @@
-[Link to Solution: ](../basics/Main.java)
+[Link to Solution: ](../basicLibrary/src/main/java/basicLibrary/Library.java)
 
 # Challenge Summary
 Lab 02: Arrays, for loops, imports, ArrayLists
