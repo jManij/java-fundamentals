@@ -1,8 +1,10 @@
 
 import java.lang.Math;
+import java.time.LocalDateTime;
+import java.time.format.DateTimeFormatter;
 
 public class Main {
-  public static void main (String[] args) {
+  public static void main (String[] args) throws InterruptedException{
     System.out.println("\n\n Feature Task1:");
     System.out.println(pluralize("dog", 1));
     System.out.println(pluralize("cat", 2));
@@ -50,9 +52,13 @@ public class Main {
   }
   }
 
-  public static void CommandLineClock() {
+  public static void CommandLineClock() throws InterruptedException {
     while (true) {
-
+      LocalDateTime now = LocalDateTime.now();
+      DateTimeFormatter format = DateTimeFormatter.ofPattern("HH:mm:ss");
+      String formatDateTime = now.format(format);
+      System.out.println(formatDateTime);
+      Thread.sleep(1000);
     }
   }
 
