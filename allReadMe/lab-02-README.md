@@ -1,7 +1,7 @@
 [Link to Solution: ](../basics/Main.java)
 
 # Challenge Summary
-Lab 01: Java primitives and control flow
+Lab 02: Arrays, for loops, imports, ArrayLists
 
 ## Challenge Description
 The lab consists of 3 feature tasks: rolling dice, contains duplicate, calculating average,
