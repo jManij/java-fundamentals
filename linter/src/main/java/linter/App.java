@@ -28,7 +28,6 @@ public class App {
                     //do nothing
                 } else if (!(line.charAt(line.length() - 1) == ';')) {
                     errorMessage += "Line " + lineNumber + ": Missing semicolon.\n";
-//                    return errorMessage;
 
                 }
             }
