@@ -56,10 +56,10 @@ function zadd1(a,b,z) {
   return {ones, zf};
 }
 
-// add1(0, 1)
-// add2(00, 01)
-// add4(0000, 1001)
-// add8(10100000, 11001001)
+ add1(0, 1)
+ add2(00, 01)
+ add4(0000, 1001)
+ add8(10100000, 11001001)
 function add2(a,b) {
   twos = add1(a[0], b[0])
   ones = add1(a[1], b[1]);
