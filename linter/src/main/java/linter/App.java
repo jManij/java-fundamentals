@@ -3,6 +3,7 @@
  */
 package linter;
 
+import java.awt.*;
 import java.io.File;
 import java.io.FileNotFoundException;
 import java.util.Scanner;
@@ -13,7 +14,7 @@ public class App {
         Scanner in = new Scanner(file);
         String line;
         int lineNumber = 1;
-        String errorMessage = "No errors found";
+        String errorMessage = "";
 
         while (in.hasNextLine()) {
             line = in.nextLine();
@@ -26,7 +27,7 @@ public class App {
                         line.contains("if") || line.contains("else")) {
                     //do nothing
                 } else if (!(line.charAt(line.length() - 1) == ';')) {
-                    errorMessage = "Line " + lineNumber + ": Missing semicolon.";
+                    errorMessage += "Line " + lineNumber + ": Missing semicolon.\n";
 //                    return errorMessage;
 
                 }
@@ -34,6 +35,10 @@ public class App {
             lineNumber++;
         }
 
+        if (errorMessage.isEmpty()) {
+            errorMessage = "No errors found";
+        }
         return errorMessage;
     }
+
 }
