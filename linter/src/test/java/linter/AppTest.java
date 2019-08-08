@@ -13,9 +13,76 @@ public class AppTest {
 
 
     @Test
-    public void linter() throws FileNotFoundException {
-        String PATH = "/Users/kcmanish/Code401/java-fundamentals/linter/src/main/resources/gates.js";
+    public void linterMultipleErrors() throws FileNotFoundException {
+        String PATH1 = "/Users/kcmanish/Code401/java-fundamentals/linter/src/main/resources/gates.js";
         App classUnderTest = new App();
-        assertEquals("Line 3: Missing semicolon.", classUnderTest.linter(PATH));
+        assertEquals("Line 3: Missing semicolon.\n" +
+                "Line 5: Missing semicolon.\n" +
+                "Line 11: Missing semicolon.\n" +
+                "Line 13: Missing semicolon.\n" +
+                "Line 15: Missing semicolon.\n" +
+                "Line 26: Missing semicolon.\n" +
+                "Line 28: Missing semicolon.\n" +
+                "Line 32: Missing semicolon.\n" +
+                "Line 36: Missing semicolon.\n" +
+                "Line 40: Missing semicolon.\n" +
+                "Line 41: Missing semicolon.\n" +
+                "Line 50: Missing semicolon.\n" +
+                "Line 51: Missing semicolon.\n" +
+                "Line 59: Missing semicolon.\n" +
+                "Line 60: Missing semicolon.\n" +
+                "Line 61: Missing semicolon.\n" +
+                "Line 62: Missing semicolon.\n" +
+                "Line 64: Missing semicolon.\n" +
+                "Line 70: Missing semicolon.\n" +
+                "Line 71: Missing semicolon.\n" +
+                "Line 72: Missing semicolon.\n" +
+                "Line 73: Missing semicolon.\n" +
+                "Line 74: Missing semicolon.\n" +
+                "Line 76: Missing semicolon.\n" +
+                "Line 77: Missing semicolon.\n" +
+                "Line 78: Missing semicolon.\n" +
+                "Line 79: Missing semicolon.\n" +
+                "Line 80: Missing semicolon.\n" +
+                "Line 82: Missing semicolon.\n" +
+                "Line 83: Missing semicolon.\n" +
+                "Line 84: Missing semicolon.\n" +
+                "Line 85: Missing semicolon.\n" +
+                "Line 86: Missing semicolon.\n" +
+                "Line 88: Missing semicolon.\n" +
+                "Line 89: Missing semicolon.\n" +
+                "Line 90: Missing semicolon.\n" +
+                "Line 91: Missing semicolon.\n" +
+                "Line 92: Missing semicolon.\n" +
+                "Line 94: Missing semicolon.\n" +
+                "Line 95: Missing semicolon.\n" +
+                "Line 96: Missing semicolon.\n" +
+                "Line 97: Missing semicolon.\n" +
+                "Line 98: Missing semicolon.\n" +
+                "Line 99: Missing semicolon.\n" +
+                "Line 100: Missing semicolon.\n" +
+                "Line 101: Missing semicolon.\n", classUnderTest.linter(PATH1));
     }
+    @Test
+    public void linterNoErrors() throws FileNotFoundException {
+        App test = new App();
+        String PATH2 = "/Users/kcmanish/Code401/java-fundamentals/linter/src/main/resources/gates1.js";
+        assertEquals("No errors found", test.linter(PATH2));
+    }
+
+    @Test
+    public void linterOneError() throws FileNotFoundException {
+        String PATH3 = "/Users/kcmanish/Code401/java-fundamentals/linter/src/main/resources/gates2.js";
+        App test = new App();
+        assertEquals("Line 7: Missing semicolon.\n", test.linter(PATH3));
+
+    }
+
+    @Test
+    public void linterEmptyFile() throws FileNotFoundException {
+        String PATH4 = "/Users/kcmanish/Code401/java-fundamentals/linter/src/main/resources/gates3.js";
+        App test = new App();
+        assertEquals("No errors found", test.linter(PATH4));
+    }
+
 }
