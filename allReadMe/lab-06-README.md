@@ -8,6 +8,7 @@
 
 #How to run it
 - Clone the repo: https://github.com/jManij/java-fundamentals
+
 Testing from terminal:
    - cd to java-fundamentals/inheritance
    - run the following command: './gradlew test'
