@@ -14,7 +14,7 @@ public class AppTest {
 
     @Test
     public void linterMultipleErrors() throws FileNotFoundException {
-        String PATH1 = "/Users/kcmanish/Code401/java-fundamentals/linter/src/main/resources/gates.js";
+        String PATH1 = "./src/main/resources/gates.js";
         App classUnderTest = new App();
         assertEquals("Line 3: Missing semicolon.\n" +
                 "Line 5: Missing semicolon.\n" +
@@ -66,13 +66,13 @@ public class AppTest {
     @Test
     public void linterNoErrors() throws FileNotFoundException {
         App test = new App();
-        String PATH2 = "/Users/kcmanish/Code401/java-fundamentals/linter/src/main/resources/gates1.js";
+        String PATH2 = "./src/main/resources/gates1.js";
         assertEquals("No errors found", test.linter(PATH2));
     }
 
     @Test
     public void linterOneError() throws FileNotFoundException {
-        String PATH3 = "/Users/kcmanish/Code401/java-fundamentals/linter/src/main/resources/gates2.js";
+        String PATH3 = "./src/main/resources/gates2.js";
         App test = new App();
         assertEquals("Line 7: Missing semicolon.\n", test.linter(PATH3));
 
@@ -80,7 +80,7 @@ public class AppTest {
 
     @Test
     public void linterEmptyFile() throws FileNotFoundException {
-        String PATH4 = "/Users/kcmanish/Code401/java-fundamentals/linter/src/main/resources/gates3.js";
+        String PATH4 = "./src/main/resources/gates3.js";
         App test = new App();
         assertEquals("No errors found", test.linter(PATH4));
     }
