@@ -18,16 +18,87 @@ public class LibraryTest {
     }
 
     @Test public void restaurantToStringTest() {
-        assertEquals("Restaurant{name='Happy Teriyaki', rating=4, price_category='$$'}", restaurant.toString());
+        assertEquals("It should return the String conversion of Restaurant","Restaurant{name='Happy Teriyaki', rating=4.0, price_category='$$'}", restaurant.toString());
     }
 
     @Test public void reveiewToStringTest() {
-        assertEquals("Review{body='Amazing restaurant', author='Manish', rating='5'}", review.toString());
+        assertEquals("It should return the String conversion of Review","Review{body='Amazing restaurant', author='Manish', rating='5.0'}", review.toString());
     }
 
     @Test public void addReviewTEst() {
         restaurant.addReview(review);
-        assertEquals("Restaurant{name='Happy Teriyaki', rating=5, price_category='$$'}", restaurant.toString());
+        assertEquals("It should add review for the restaurant","Restaurant{name='Happy Teriyaki', rating=5.0, price_category='$$'}", restaurant.toString());
+
+    }
+
+    //Lab -07
+    @Test public void shopTest() {
+        Shop shop1 = new Shop("Macy","great place to hangout", "$$");
+        Shop shop2 = new Shop("Ross","great place to hangout", "$$");
+        Shop shop3 = new Shop("Dollar Tree","great place to hangout", "$$");
+        Shop shop4 = new Shop("Terrace","great place to hangout", "$$");
+
+        assertEquals("The shop constructor should create a new shop object","Shop{name='Macy', description='great place to hangout', dollarSigns='$$'}", shop1.toString());
+        assertEquals("The shop constructor should create a new shop object","Shop{name='Ross', description='great place to hangout', dollarSigns='$$'}", shop2.toString());
+        assertEquals("The shop constructor should create a new shop object","Shop{name='Dollar Tree', description='great place to hangout', dollarSigns='$$'}", shop3.toString());
+        assertEquals("The shop constructor should create a new shop object","Shop{name='Terrace', description='great place to hangout', dollarSigns='$$'}", shop4.toString());
+
+    }
+
+    @Test public void shopReviewTest() {
+        Shop shop = new Shop("Macy","great place to hangout", "$$");
+        Review review1 = new Review("Great!", "Bob", 4.3);
+        Review review2 = new Review("Great!", "John", 3.9);
+        Review review3 = new Review("Great!", "Stacy", 5.0);
+        Review review4 = new Review("Great!", "Karma", 4.0);
+        shop.addReview(review1);
+        shop.addReview(review2);
+        shop.addReview(review3);
+        shop.addReview(review4);
+
+        assertEquals("It should populate the review for the shop","Review{body='Great!', author='Bob', rating='4.3'}", shop.getReviews().get(0).toString());
+        assertEquals("It should populate the review for the shop","Review{body='Great!', author='John', rating='3.9'}", shop.getReviews().get(1).toString());
+        assertEquals("It should populate the review for the shop","Review{body='Great!', author='Stacy', rating='5.0'}", shop.getReviews().get(2).toString());
+        assertEquals("It should populate the review for the shop","Review{body='Great!', author='Karma', rating='4.0'}", shop.getReviews().get(3).toString());
+
+    }
+
+    @Test public void theaterTest() {
+        Theater theater1 = new Theater("Regal");
+        Theater theater2 = new Theater("Paccar");
+        Theater theater3 = new Theater("Cinerama");
+        Theater theater4 = new Theater("Big Picture");
+        assertEquals("The theater constructor should create a new theater object","Theater{name='Regal', allMovies=[  ]}", theater1.toString());
+        assertEquals("The theater constructor should create a new theater object","Theater{name='Paccar', allMovies=[  ]}", theater2.toString());
+        assertEquals("The theater constructor should create a new theater object","Theater{name='Cinerama', allMovies=[  ]}", theater3.toString());
+        assertEquals("The theater constructor should create a new theater object","Theater{name='Big Picture', allMovies=[  ]}", theater4.toString());
+
+    }
+
+    @Test public void theaterFunctionsTest() {
+        Theater theater = new Theater("Regal");
+        theater.addMovie("Snow Piercer");
+        theater.addMovie("The Lion King");
+        theater.addMovie("Apollo 11");
+
+        assertEquals("It should return the name of the movie","Snow Piercer", theater.getMovies().get(0));
+        assertEquals("It should return the name of the movie","The Lion King", theater.getMovies().get(1));
+        assertEquals("It should return the name of the movie","Apollo 11", theater.getMovies().get(2));
+        assertEquals("It should return the String version of Theater with movies playing there","Theater{name='Regal', allMovies=[ Snow Piercer The Lion King Apollo 11 ]}", theater.toString());
+
+        theater.removeMovie("Apollo 11");
+        theater.removeMovie("Snow Piercer");
+        theater.removeMovie("The Lion King");
+
+        assertEquals("It should return an empty list of movies",0, theater.getMovies().size());
+    }
+
+    @Test public void movieReviewTest() {
+        Theater theater = new Theater("Regal");
+        theater.addMovie("Snow Piercer");
+        MovieReview review = new MovieReview("Great", "Karma", 4.2, "Snow Piercer");
+        theater.addReview(review);
+        assertEquals("The new movie review should populate","MovieReview{movie='Snow Piercer', body='Great', author='Karma', rating=4.2}", theater.getReviews().get(0).toString());
     }
 
 
