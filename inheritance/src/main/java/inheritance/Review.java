@@ -3,9 +3,9 @@ package inheritance;
 public class Review {
     String body;
     String author;
-    int rating;
+    double rating;
 
-    public Review(String body, String author, int rating) {
+    public Review(String body, String author, double rating) {
         this.body = body;
         this.author = author;
         this.rating = rating;
@@ -19,4 +19,6 @@ public class Review {
                 ", rating='" + rating + '\'' +
                 '}';
     }
+
+
 }
