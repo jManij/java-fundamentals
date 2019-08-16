@@ -68,10 +68,10 @@ public class LibraryTest {
         Theater theater2 = new Theater("Paccar");
         Theater theater3 = new Theater("Cinerama");
         Theater theater4 = new Theater("Big Picture");
-        assertEquals("The theater constructor should create a new theater object","Theater{name='Regal', allMovies=[  ]}", theater1.toString());
-        assertEquals("The theater constructor should create a new theater object","Theater{name='Paccar', allMovies=[  ]}", theater2.toString());
-        assertEquals("The theater constructor should create a new theater object","Theater{name='Cinerama', allMovies=[  ]}", theater3.toString());
-        assertEquals("The theater constructor should create a new theater object","Theater{name='Big Picture', allMovies=[  ]}", theater4.toString());
+        assertEquals("The theater constructor should create a new theater object","Theater{name='Regal', allMovies=[ ]}", theater1.toString());
+        assertEquals("The theater constructor should create a new theater object","Theater{name='Paccar', allMovies=[ ]}", theater2.toString());
+        assertEquals("The theater constructor should create a new theater object","Theater{name='Cinerama', allMovies=[ ]}", theater3.toString());
+        assertEquals("The theater constructor should create a new theater object","Theater{name='Big Picture', allMovies=[ ]}", theater4.toString());
 
     }
 
